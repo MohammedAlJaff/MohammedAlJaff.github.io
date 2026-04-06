@@ -1,385 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PhD Researcher — KTH Royal Institute of Technology</title>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #f6f4f0;
-    --fg: #1a1a1a;
-    --muted: #6b6560;
-    --accent: #2d5a3d;
-    --accent-light: #e8f0eb;
-    --rule: #d4cfc8;
-    --serif: 'Instrument Serif', Georgia, serif;
-    --sans: 'DM Sans', sans-serif;
-    --mono: 'JetBrains Mono', monospace;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammed Al-Jaff — KTH Royal Institute of Technology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --fg: #1a1a1a;
+      --muted: #6b6560;
+      --accent: #2d5a3d;
+      --accent-light: #e8f0eb;
+      --rule: #d4cfc8;
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  body {
-    font-family: var(--sans);
-    background: var(--bg);
-    color: var(--fg);
-    font-size: 16px;
-    line-height: 1.65;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  ::selection { background: var(--accent); color: #fff; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 16px;
+      line-height: 1.65;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
 
-  header {
-    padding: 80px 0 0;
-    animation: fadeUp 0.8s ease both;
-  }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+    header {
+      padding: 80px 0 0;
+      animation: fadeUp 0.8s ease both;
+    }
 
-  header h1 {
-    font-family: var(--serif);
-    font-size: clamp(2.8rem, 6vw, 4rem);
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin-bottom: 12px;
-  }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  .subtitle {
-    font-size: 1.05rem;
-    color: var(--muted);
-    margin-bottom: 32px;
-    font-weight: 300;
-  }
+    header h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 4rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
 
-  .subtitle a {
-    color: var(--muted);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-color: var(--rule);
-    transition: color 0.2s;
-  }
-  .subtitle a:hover { color: var(--accent); }
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
 
-  nav {
-    display: flex;
-    gap: 28px;
-    padding: 20px 0;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    margin-bottom: 56px;
-  }
+    a {
+      color: inherit;
+    }
 
-  nav a {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    text-decoration: none;
-    font-weight: 400;
-    transition: color 0.2s;
-  }
-  nav a:hover { color: var(--fg); }
+    .subtitle a,
+    .contact-grid dd a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--rule);
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
 
-  section {
-    margin-bottom: 56px;
-    animation: fadeUp 0.8s ease both;
-  }
-  section:nth-of-type(2) { animation-delay: 0.1s; }
-  section:nth-of-type(3) { animation-delay: 0.2s; }
-  section:nth-of-type(4) { animation-delay: 0.3s; }
-  section:nth-of-type(5) { animation-delay: 0.4s; }
+    .subtitle a:hover,
+    .contact-grid dd a:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
 
-  .section-label {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 16px;
-  }
+    nav {
+      display: flex;
+      gap: 28px;
+      padding: 20px 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 56px;
+    }
 
-  h2 {
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 400;
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
-  }
+    nav a {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
 
-  p { margin-bottom: 14px; }
+    nav a:hover {
+      color: var(--fg);
+    }
 
-  .interests {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 20px 0;
-  }
+    section {
+      margin-bottom: 56px;
+      animation: fadeUp 0.8s ease both;
+    }
 
-  .interests span {
-    font-size: 0.82rem;
-    font-family: var(--mono);
-    padding: 6px 14px;
-    background: var(--accent-light);
-    color: var(--accent);
-    border-radius: 4px;
-    letter-spacing: -0.01em;
-  }
+    section:nth-of-type(2) { animation-delay: 0.1s; }
+    section:nth-of-type(3) { animation-delay: 0.2s; }
+    section:nth-of-type(4) { animation-delay: 0.3s; }
+    section:nth-of-type(5) { animation-delay: 0.4s; }
 
-  .paper {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .paper:first-of-type { border-top: 1px solid var(--rule); }
+    .section-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
 
-  .paper-title {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    margin-bottom: 4px;
-    font-weight: 400;
-  }
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
 
-  .paper-venue {
-    font-size: 0.82rem;
-    color: var(--muted);
-    font-family: var(--mono);
-    margin-bottom: 6px;
-  }
+    p {
+      margin-bottom: 14px;
+    }
 
-  .paper-desc { font-size: 0.92rem; color: var(--muted); }
+    #about a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--rule);
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
 
-  .paper-links { margin-top: 8px; display: flex; gap: 16px; }
+    #about a:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
 
-  .paper-links a {
-    font-size: 0.8rem;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 400;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
-  }
-  .paper-links a:hover { border-color: var(--accent); }
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0;
+    }
 
-  .post {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--rule);
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 16px;
-    align-items: baseline;
-  }
-  .post:first-of-type { border-top: 1px solid var(--rule); }
+    .interests span {
+      font-size: 0.82rem;
+      font-family: var(--mono);
+      padding: 6px 14px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 4px;
+      letter-spacing: -0.01em;
+    }
 
-  .post-date {
-    font-size: 0.78rem;
-    font-family: var(--mono);
-    color: var(--muted);
-    padding-top: 2px;
-  }
+    .paper {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--rule);
+    }
 
-  .post-title {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    font-weight: 400;
-  }
+    .paper:first-of-type {
+      border-top: 1px solid var(--rule);
+    }
 
-  .post-title a {
-    color: var(--fg);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
-  }
-  .post-title a:hover { border-color: var(--accent); }
+    .paper-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+      font-weight: 400;
+    }
 
-  .post-summary {
-    grid-column: 2;
-    font-size: 0.88rem;
-    color: var(--muted);
-    margin-top: -8px;
-  }
+    .paper-venue {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-family: var(--mono);
+      margin-bottom: 6px;
+    }
 
-  .contact-grid {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 6px 20px;
-    font-size: 0.95rem;
-  }
+    .paper-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
 
-  .contact-grid dt {
-    color: var(--muted);
-    font-size: 0.82rem;
-    font-family: var(--mono);
-    padding-top: 2px;
-  }
+    .paper-links {
+      margin-top: 8px;
+      display: flex;
+      gap: 16px;
+    }
 
-  .contact-grid dd a {
-    color: var(--fg);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-    transition: border-color 0.2s;
-  }
-  .contact-grid dd a:hover { border-color: var(--accent); }
+    .paper-links a {
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 400;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
 
-  footer {
-    padding: 40px 0 60px;
-    border-top: 1px solid var(--rule);
-    color: var(--muted);
-    font-size: 0.8rem;
-  }
-  footer span { font-family: var(--mono); }
+    .paper-links a:hover {
+      border-color: var(--accent);
+    }
 
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 999;
-  }
+    .ideas-intro {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
 
-  @media (max-width: 600px) {
-    header { padding-top: 48px; }
-    nav { gap: 16px; flex-wrap: wrap; }
-    .post { grid-template-columns: 1fr; }
-    .post-date { margin-bottom: -12px; }
-    .post-summary { grid-column: 1; }
-    .contact-grid { grid-template-columns: 1fr; gap: 4px; }
-    .contact-grid dt { margin-top: 8px; }
-  }
-</style>
+    .post {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 16px;
+      align-items: baseline;
+    }
+
+    .post:first-of-type {
+      border-top: 1px solid var(--rule);
+    }
+
+    .post-date {
+      font-size: 0.78rem;
+      font-family: var(--mono);
+      color: var(--muted);
+      padding-top: 2px;
+    }
+
+    .post-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+
+    .post-title a {
+      color: var(--fg);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .post-title a:hover {
+      border-color: var(--accent);
+    }
+
+    .post-summary {
+      grid-column: 2;
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: -8px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 6px 20px;
+      font-size: 0.95rem;
+    }
+
+    .contact-grid dt {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-family: var(--mono);
+      padding-top: 2px;
+    }
+
+    .contact-grid dd {
+      margin: 0;
+    }
+
+    footer {
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    footer span {
+      font-family: var(--mono);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding-top: 48px;
+      }
+
+      nav {
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .post {
+        grid-template-columns: 1fr;
+      }
+
+      .post-date {
+        margin-bottom: -12px;
+      }
+
+      .post-summary {
+        grid-column: 1;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .contact-grid dt {
+        margin-top: 8px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<div class="container">
-  <header>
-    <h1>Mohammed Al-Jaff</h1>
-    <p class="subtitle">
-      PhD student in Machine Learning · <a href="https://www.kth.se" target="_blank">KTH Royal Institute of Technology</a> · Stockholm
-    </p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#publications">Papers</a>
-      <a href="#ideas">Ideas</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-
-<section id="about">
-  <div class="section-label">About</div>
-  <p>
-    I am a PhD student in machine learning at 
-    <a href="https://www.kth.se" target="_blank" rel="noopener noreferrer">KTH Royal Institute of Technology</a> 
-    in Stockholm, supervised by 
-    <a href="https://www.kth.se/profile/dani" target="_blank" rel="noopener noreferrer"><strong><em>Prof. Danica Kragic Jensfelt</em></strong></a>, 
-    <a href="https://www.kth.se/profile/azizpour" target="_blank" rel="noopener noreferrer"><strong><em>Prof. Hossein Azizpour</em></strong></a>, 
-    and 
-    <a href="https://www.kth.se/profile/ghe" target="_blank" rel="noopener noreferrer"><strong><em>Prof. Gustav Eje Henter</em></strong></a>.
-  </p>
-  <p>
-    My research focuses on generative modelling and learning dynamics, with an emphasis on how
-    objectives, parameterization, and data structure shape model behavior under finite data and
-    limited capacity.
-  </p>
-  <p>
-    I am particularly interested in the boundary between memorization and generalization, the
-    emergence of compositional structure, and how modelling choices affect robustness and
-    downstream performance. More broadly, my work sits at the intersection of generative modelling,
-    representation learning, and the theory of modern learning systems.
-  </p>
-
-  <div class="interests">
-    <span>generative models</span>
-    <span>flow matching</span>
-    <span>representation learning</span>
-    <span>compositionality</span>
-    <span>anomaly detection</span>
-    <span>learning dynamics</span>
-  </div>
-</section>
-
-    <section id="publications">
-      <div class="section-label">Publications</div>
-
-      <div class="paper">
-        <div class="paper-title">Your paper title here</div>
-        <div class="paper-venue">Venue · 2025</div>
-        <p class="paper-desc">Brief description of the paper and its contribution.</p>
-        <div class="paper-links">
-          <a href="#">arXiv</a>
-          <a href="#">code</a>
-        </div>
-      </div>
-
-      <!-- duplicate for more papers
-      <div class="paper">
-        <div class="paper-title">Another paper</div>
-        <div class="paper-venue">Venue · 2024</div>
-        <p class="paper-desc">Description.</p>
-        <div class="paper-links">
-          <a href="#">arXiv</a>
-        </div>
-      </div>
-      -->
-    </section>
-
-    <section id="ideas">
-      <div class="section-label">Ideas & Notes</div>
-      <p style="margin-bottom: 24px; color: var(--muted); font-size: 0.92rem;">
-        Loose thoughts, half-baked hypotheses, and things I find interesting. Not peer-reviewed, not always right.
+  <div class="container">
+    <header>
+      <h1>Mohammed Al-Jaff</h1>
+      <p class="subtitle">
+        PhD student in Machine Learning ·
+        <a href="https://www.kth.se" target="_blank" rel="noopener noreferrer">KTH Royal Institute of Technology</a>
+        · Stockholm
       </p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#publications">Papers</a>
+        <a href="#ideas">Ideas</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-      <div class="post">
-        <span class="post-date">2026-04</span>
-        <div class="post-title"><a href="#">Post title here</a></div>
-        <p class="post-summary">One-line summary of the idea.</p>
-      </div>
+    <main>
+      <section id="about">
+        <div class="section-label">About</div>
+        <p>
+          I am a PhD student in machine learning at
+          <a href="https://www.kth.se" target="_blank" rel="noopener noreferrer">KTH Royal Institute of Technology</a>
+          in Stockholm, supervised by
+          <a href="https://www.kth.se/profile/dani" target="_blank" rel="noopener noreferrer"><strong><em>Prof. Danica Kragic Jensfelt</em></strong></a>,
+          <a href="https://www.kth.se/profile/azizpour" target="_blank" rel="noopener noreferrer"><strong><em>Prof. Hossein Azizpour</em></strong></a>,
+          and
+          <a href="https://www.kth.se/profile/ghe" target="_blank" rel="noopener noreferrer"><strong><em>Prof. Gustav Eje Henter</em></strong></a>.
+        </p>
+        <p>
+          My research focuses on generative modelling and learning dynamics, with an emphasis on how
+          objectives, parameterization, and data structure shape model behavior under finite data and
+          limited capacity.
+        </p>
+        <p>
+          I am particularly interested in the boundary between memorization and generalization, the
+          emergence of compositional structure, and how modelling choices affect robustness and
+          downstream performance. More broadly, my work sits at the intersection of generative
+          modelling, representation learning, and the theory of modern learning systems.
+        </p>
 
-      <div class="post">
-        <span class="post-date">2026-03</span>
-        <div class="post-title"><a href="#">Another post title</a></div>
-        <p class="post-summary">One-line summary.</p>
-      </div>
+        <div class="interests">
+          <span>generative models</span>
+          <span>flow matching</span>
+          <span>representation learning</span>
+          <span>compositionality</span>
+          <span>anomaly detection</span>
+          <span>learning dynamics</span>
+        </div>
+      </section>
 
-      <!-- duplicate for more posts
-      <div class="post">
-        <span class="post-date">YYYY-MM</span>
-        <div class="post-title"><a href="#">Title</a></div>
-        <p class="post-summary">Summary.</p>
-      </div>
-      -->
-    </section>
+      <section id="publications">
+        <div class="section-label">Publications</div>
 
-    <section id="contact">
-      <div class="section-label">Contact</div>
-      <dl class="contact-grid">
-        <dt>email</dt>
-        <dd><a href="mailto:you@kth.se">you@kth.se</a></dd>
-        <dt>scholar</dt>
-        <dd><a href="#">Google Scholar</a></dd>
-        <dt>github</dt>
-        <dd><a href="#">github.com/you</a></dd>
-        <dt>twitter</dt>
-        <dd><a href="#">@you</a></dd>
-      </dl>
-    </section>
+        <div class="paper">
+          <div class="paper-title">Your paper title here</div>
+          <div class="paper-venue">Venue · 2025</div>
+          <p class="paper-desc">Brief description of the paper and its contribution.</p>
+          <div class="paper-links">
+            <a href="#">arXiv</a>
+            <a href="#">code</a>
+          </div>
+        </div>
+      </section>
 
-  </main>
+      <section id="ideas">
+        <div class="section-label">Ideas &amp; Notes</div>
+        <p class="ideas-intro">
+          Loose thoughts, half-baked hypotheses, and things I find interesting. Not peer-reviewed, not always right.
+        </p>
 
-  <footer>
-    <span>&copy; 2026</span> · Stockholm
-  </footer>
-</div>
+        <div class="post">
+          <span class="post-date">2026-04</span>
+          <div class="post-title"><a href="#">Post title here</a></div>
+          <p class="post-summary">One-line summary of the idea.</p>
+        </div>
 
+        <div class="post">
+          <span class="post-date">2026-03</span>
+          <div class="post-title"><a href="#">Another post title</a></div>
+          <p class="post-summary">One-line summary.</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-label">Contact</div>
+        <dl class="contact-grid">
+          <dt>email</dt>
+          <dd><a href="mailto:you@kth.se">you@kth.se</a></dd>
+
+          <dt>scholar</dt>
+          <dd><a href="#">Google Scholar</a></dd>
+
+          <dt>github</dt>
+          <dd><a href="#">github.com/you</a></dd>
+
+          <dt>twitter</dt>
+          <dd><a href="#">@you</a></dd>
+        </dl>
+      </section>
+    </main>
+
+    <footer>
+      <span>&copy; 2026</span> · Stockholm
+    </footer>
+  </div>
 </body>
 </html>
