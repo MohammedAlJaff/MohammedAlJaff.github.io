@@ -18,15 +18,8 @@
       --mono: 'JetBrains Mono', monospace;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--sans);
@@ -38,65 +31,40 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    ::selection {
-      background: var(--accent);
-      color: #fff;
-    }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
 
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    header {
-      padding: 80px 0 0;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    header { padding: 80px 0 0; }
 
     header h1 {
       font-family: var(--serif);
       font-size: clamp(2.8rem, 6vw, 4rem);
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
       margin-bottom: 12px;
     }
 
     .subtitle {
       font-size: 1.05rem;
       color: var(--muted);
-      margin-bottom: 32px;
-      font-weight: 300;
+      margin-bottom: 16px;
     }
 
-    a {
-      color: inherit;
+    .contact-links {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 28px;
+      font-size: 0.8rem;
+      font-family: var(--mono);
     }
 
-    .subtitle a,
-    .contact-grid dd a {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: var(--rule);
-      transition: color 0.2s, text-decoration-color 0.2s;
+    .contact-links a {
+      text-decoration: none;
+      color: var(--muted);
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
     }
 
-    .subtitle a:hover,
-    .contact-grid dd a:hover {
+    .contact-links a:hover {
       color: var(--accent);
-      text-decoration-color: var(--accent);
+      border-color: var(--accent);
     }
 
     nav {
@@ -114,56 +82,21 @@
       letter-spacing: 0.08em;
       color: var(--muted);
       text-decoration: none;
-      font-weight: 400;
-      transition: color 0.2s;
     }
 
-    nav a:hover {
-      color: var(--fg);
-    }
+    nav a:hover { color: var(--fg); }
 
-    section {
-      margin-bottom: 56px;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    section:nth-of-type(2) { animation-delay: 0.1s; }
-    section:nth-of-type(3) { animation-delay: 0.2s; }
-    section:nth-of-type(4) { animation-delay: 0.3s; }
-    section:nth-of-type(5) { animation-delay: 0.4s; }
+    section { margin-bottom: 56px; }
 
     .section-label {
       font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--accent);
-      font-weight: 500;
       margin-bottom: 16px;
     }
 
-    h2 {
-      font-family: var(--serif);
-      font-size: 1.6rem;
-      font-weight: 400;
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
-    }
-
-    p {
-      margin-bottom: 14px;
-    }
-
-    #about a {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: var(--rule);
-      transition: color 0.2s, text-decoration-color 0.2s;
-    }
-
-    #about a:hover {
-      color: var(--accent);
-      text-decoration-color: var(--accent);
-    }
+    p { margin-bottom: 14px; }
 
     .interests {
       display: flex;
@@ -179,123 +112,23 @@
       background: var(--accent-light);
       color: var(--accent);
       border-radius: 4px;
-      letter-spacing: -0.01em;
     }
 
-    .paper {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--rule);
-    }
+    .paper { padding: 20px 0; border-bottom: 1px solid var(--rule); }
 
-    .paper:first-of-type {
-      border-top: 1px solid var(--rule);
-    }
-
-    .paper-title {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      margin-bottom: 4px;
-      font-weight: 400;
-    }
+    .paper-title { font-family: var(--serif); font-size: 1.15rem; }
 
     .paper-venue {
       font-size: 0.82rem;
       color: var(--muted);
       font-family: var(--mono);
-      margin-bottom: 6px;
     }
 
-    .paper-desc {
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
+    .paper-links { margin-top: 8px; display: flex; gap: 16px; }
 
-    .paper-links {
-      margin-top: 8px;
-      display: flex;
-      gap: 16px;
-    }
+    .paper-links a { color: var(--accent); text-decoration: none; }
 
-    .paper-links a {
-      font-size: 0.8rem;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 400;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-
-    .paper-links a:hover {
-      border-color: var(--accent);
-    }
-
-    .ideas-intro {
-      margin-bottom: 24px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .post {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--rule);
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 16px;
-      align-items: baseline;
-    }
-
-    .post:first-of-type {
-      border-top: 1px solid var(--rule);
-    }
-
-    .post-date {
-      font-size: 0.78rem;
-      font-family: var(--mono);
-      color: var(--muted);
-      padding-top: 2px;
-    }
-
-    .post-title {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 400;
-    }
-
-    .post-title a {
-      color: var(--fg);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-
-    .post-title a:hover {
-      border-color: var(--accent);
-    }
-
-    .post-summary {
-      grid-column: 2;
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-top: -8px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 6px 20px;
-      font-size: 0.95rem;
-    }
-
-    .contact-grid dt {
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-family: var(--mono);
-      padding-top: 2px;
-    }
-
-    .contact-grid dd {
-      margin: 0;
-    }
+    .ideas-intro { color: var(--muted); font-size: 0.92rem; margin-bottom: 24px; }
 
     footer {
       padding: 40px 0 60px;
@@ -303,161 +136,97 @@
       color: var(--muted);
       font-size: 0.8rem;
     }
-
-    footer span {
-      font-family: var(--mono);
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 999;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding-top: 48px;
-      }
-
-      nav {
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-
-      .post {
-        grid-template-columns: 1fr;
-      }
-
-      .post-date {
-        margin-bottom: -12px;
-      }
-
-      .post-summary {
-        grid-column: 1;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 4px;
-      }
-
-      .contact-grid dt {
-        margin-top: 8px;
-      }
-    }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <h1>Mohammed Al-Jaff</h1>
-     <p class="subtitle">
-      PhD student in Machine Learning ·
-      <a href="https://www.kth.se/profile/mohamaj?l=en" target="_blank" rel="noopener noreferrer">KTH Royal Institute of Technology</a>
-      · Stockholm
-    </p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#publications">Papers</a>
-        <a href="#ideas">Ideas</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<div class="container">
 
-    <main>
-      <section id="about">
-        <div class="section-label">About</div>
-        <p>
-          I am a PhD student in machine learning at
-          <a href="https://www.kth.se" target="_blank" rel="noopener noreferrer">KTH Royal Institute of Technology</a>
-          in Stockholm, supervised by
-          <a href="https://www.kth.se/profile/dani" target="_blank" rel="noopener noreferrer"><strong><em>Prof. Danica Kragic Jensfelt</em></strong></a>,
-          <a href="https://www.kth.se/profile/azizpour" target="_blank" rel="noopener noreferrer"><strong><em>Prof. Hossein Azizpour</em></strong></a>,
-          and
-          <a href="https://www.kth.se/profile/ghe" target="_blank" rel="noopener noreferrer"><strong><em>Prof. Gustav Eje Henter</em></strong></a>.
-        </p>
-        <p>
-          My research focuses on generative modelling and learning dynamics, with an emphasis on how
-          objectives, parameterization, and data structure shape model behavior under finite data and
-          limited capacity.
-        </p>
-        <p>
-          I am particularly interested in the boundary between memorization and generalization, the
-          emergence of compositional structure, and how modelling choices affect robustness and
-          downstream performance. More broadly, my work sits at the intersection of generative
-          modelling, representation learning, and the theory of modern learning systems.
-        </p>
+<header>
+  <h1>Mohammed Al-Jaff</h1>
 
-        <div class="interests">
-          <span>generative models</span>
-          <span>flow matching</span>
-          <span>representation learning</span>
-          <span>compositionality</span>
-          <span>anomaly detection</span>
-          <span>learning dynamics</span>
-        </div>
-      </section>
+  <p class="subtitle">
+    PhD student in Machine Learning ·
+    <a href="https://www.kth.se/profile/mohamaj?l=en" target="_blank">KTH Royal Institute of Technology</a>
+    · Stockholm
+  </p>
 
-      <section id="publications">
-        <div class="section-label">Publications</div>
-
-        <div class="paper">
-            <div class="paper-title">A Non-Adversarial Approach to Idempotent Generative Modelling</div>
-            <div class="paper-venue">ECAI 2025</div>
-            <p class="paper-desc">
-            Non-adversarial training for idempotent generative networks, combining reconstruction
-            with IMLE to improve coverage, stability, and restoration behavior.
-            </p>
-            <div class="paper-links">
-            <a href="https://arxiv.org/abs/2511.02614" target="_blank" rel="noopener noreferrer">arXiv</a>
-            <a href="https://scholar.google.com/citations?hl=en&user=gEyt0mUAAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a>
-            </div>
-        </div>
-        </section>
-
-      <section id="ideas">
-        <div class="section-label">Ideas &amp; Notes</div>
-        <p class="ideas-intro">
-          Loose thoughts, half-baked hypotheses, and things I find interesting. Not peer-reviewed, not always right.
-        </p>
-
-        <div class="post">
-          <span class="post-date">2026-04</span>
-          <div class="post-title"><a href="#">Post title here</a></div>
-          <p class="post-summary">One-line summary of the idea.</p>
-        </div>
-
-        <div class="post">
-          <span class="post-date">2026-03</span>
-          <div class="post-title"><a href="#">Another post title</a></div>
-          <p class="post-summary">One-line summary.</p>
-        </div>
-      </section>
-
-     <section id="contact">
-        <div class="section-label">Contact</div>
-        <dl class="contact-grid">
-            <dt>email</dt>
-            <dd><a href="mailto:mohamaj@kth.se">mohamaj@kth.se</a></dd>
-
-            <dt>kth</dt>
-            <dd><a href="https://www.kth.se/profile/mohamaj?l=en" target="_blank" rel="noopener noreferrer">KTH profile</a></dd>
-
-            <dt>scholar</dt>
-            <dd><a href="https://scholar.google.com/citations?hl=en&user=gEyt0mUAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></dd>
-
-            <dt>github</dt>
-            <dd><a href="https://github.com/MohammedAlJaff" target="_blank" rel="noopener noreferrer">github.com/MohammedAlJaff</a></dd>
-        </dl>
-    </section>
-    </main>
-
-    <footer>
-      <span>&copy; 2026</span> · Stockholm
-    </footer>
+  <div class="contact-links">
+    <a href="mailto:mohamaj@kth.se">email</a>
+    <a href="https://www.kth.se/profile/mohamaj?l=en" target="_blank">kth</a>
+    <a href="https://scholar.google.com/citations?hl=en&user=gEyt0mUAAAAJ" target="_blank">scholar</a>
+    <a href="https://github.com/MohammedAlJaff" target="_blank">github</a>
   </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#publications">Papers</a>
+    <a href="#ideas">Ideas</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="about">
+  <div class="section-label">About</div>
+  <p>
+    I am a PhD student in machine learning at
+    <a href="https://www.kth.se" target="_blank">KTH Royal Institute of Technology</a>
+    in Stockholm, supervised by
+    <a href="https://www.kth.se/profile/dani" target="_blank"><strong><em>Prof. Danica Kragic Jensfelt</em></strong></a>,
+    <a href="https://www.kth.se/profile/azizpour" target="_blank"><strong><em>Prof. Hossein Azizpour</em></strong></a>,
+    and
+    <a href="https://www.kth.se/profile/ghe" target="_blank"><strong><em>Prof. Gustav Eje Henter</em></strong></a>.
+  </p>
+
+  <p>
+    My research focuses on generative modelling and learning dynamics, with an emphasis on how
+    objectives, parameterization, and data structure shape model behavior under finite data and
+    limited capacity.
+  </p>
+
+  <p>
+    I am particularly interested in the boundary between memorization and generalization, the
+    emergence of compositional structure, and how modelling choices affect robustness and
+    downstream performance.
+  </p>
+
+  <div class="interests">
+    <span>generative models</span>
+    <span>flow matching</span>
+    <span>representation learning</span>
+    <span>compositionality</span>
+    <span>anomaly detection</span>
+    <span>learning dynamics</span>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="section-label">Publications</div>
+
+  <div class="paper">
+    <div class="paper-title">A Non-Adversarial Approach to Idempotent Generative Modelling</div>
+    <div class="paper-venue">ECAI 2025</div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2511.02614" target="_blank">arXiv</a>
+      <a href="https://scholar.google.com/citations?hl=en&user=gEyt0mUAAAAJ" target="_blank">Scholar</a>
+    </div>
+  </div>
+</section>
+
+<section id="ideas">
+  <div class="section-label">Ideas & Notes</div>
+  <p class="ideas-intro">
+    Loose thoughts, hypotheses, and ongoing ideas.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  &copy; 2026 · Stockholm
+</footer>
+
+</div>
 </body>
 </html>
