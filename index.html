@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohammed Al-Jaff — KTH Royal Institute of Technology</title>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #f6f4f0;
@@ -31,7 +32,11 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
     header { padding: 80px 0 0; }
 
@@ -47,6 +52,21 @@
       margin-bottom: 16px;
     }
 
+    /* FIXED CLICKABILITY */
+    .subtitle a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--rule);
+      cursor: pointer;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+
+    .subtitle a:hover {
+      color: var(--fg);
+      text-decoration-color: var(--accent);
+    }
+
     .contact-links {
       display: flex;
       gap: 18px;
@@ -56,15 +76,16 @@
     }
 
     .contact-links a {
+      color: var(--accent);
       text-decoration: none;
-      color: var(--muted);
-      border-bottom: 1px solid transparent;
+      border-bottom: 1px solid var(--accent);
+      cursor: pointer;
       transition: color 0.2s, border-color 0.2s;
     }
 
     .contact-links a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
+      color: var(--fg);
+      border-color: var(--fg);
     }
 
     nav {
@@ -98,6 +119,17 @@
 
     p { margin-bottom: 14px; }
 
+    #about a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--rule);
+    }
+
+    #about a:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
     .interests {
       display: flex;
       flex-wrap: wrap;
@@ -124,11 +156,27 @@
       font-family: var(--mono);
     }
 
-    .paper-links { margin-top: 8px; display: flex; gap: 16px; }
+    .paper-links {
+      margin-top: 8px;
+      display: flex;
+      gap: 16px;
+    }
 
-    .paper-links a { color: var(--accent); text-decoration: none; }
+    .paper-links a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
 
-    .ideas-intro { color: var(--muted); font-size: 0.92rem; margin-bottom: 24px; }
+    .paper-links a:hover {
+      border-color: var(--accent);
+    }
+
+    .ideas-intro {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
 
     footer {
       padding: 40px 0 60px;
@@ -147,15 +195,17 @@
 
   <p class="subtitle">
     PhD student in Machine Learning ·
-    <a href="https://www.kth.se/profile/mohamaj?l=en" target="_blank">KTH Royal Institute of Technology</a>
+    <a href="https://www.kth.se/profile/mohamaj?l=en" target="_blank" rel="noopener noreferrer">
+      KTH Royal Institute of Technology
+    </a>
     · Stockholm
   </p>
 
   <div class="contact-links">
     <a href="mailto:mohamaj@kth.se">email</a>
-    <a href="https://www.kth.se/profile/mohamaj?l=en" target="_blank">kth</a>
-    <a href="https://scholar.google.com/citations?hl=en&user=gEyt0mUAAAAJ" target="_blank">scholar</a>
-    <a href="https://github.com/MohammedAlJaff" target="_blank">github</a>
+    <a href="https://www.kth.se/profile/mohamaj?l=en" target="_blank" rel="noopener noreferrer">kth</a>
+    <a href="https://scholar.google.com/citations?hl=en&user=gEyt0mUAAAAJ" target="_blank" rel="noopener noreferrer">scholar</a>
+    <a href="https://github.com/MohammedAlJaff" target="_blank" rel="noopener noreferrer">github</a>
   </div>
 
   <nav>
